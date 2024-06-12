@@ -10,34 +10,12 @@
   "files": [
     "src/"
   ],
-  "scripts": {
-    "build": "rm -rf ./lib/ && babel --extensions .ts ./src -d ./lib --ignore ./src/*.types.ts",
-    "lint": "eslint . --ext .js,.ts,.json --fix",
-    "prepublish": "npm run build"
-  },
   "dependencies": {
-    "axios": "^1.7.2",
     "debug": "^4.0.0",
     "get-stream": "^6.0.0",
     "got": "12.1.0",
     "into-stream": "^3.1.0",
     "is-stream": "^1.1.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.24.7",
-    "@babel/core": "7.24.7",
-    "@shelf/babel-config": "3.0.0",
-    "@shelf/eslint-config": "3.15.1",
-    "@shelf/prettier-config": "1.0.0",
-    "@shelf/tsconfig": "0.1.0",
-    "@types/debug": "4.1.12",
-    "@types/jest": "29.5.12",
-    "@types/node": "16",
-    "eslint": "8.57.0",
-    "memorystream": "0.3.1",
-    "prettier": "3.3.1",
-    "tsx": "^4.15.2",
-    "typescript": "5.4.5"
   },
   "engines": {
     "node": ">=16"
