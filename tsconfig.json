@@ -1,20 +1,5 @@
 {
+  "extends": "@shelf/tsconfig/backend",
   "exclude": ["node_modules"],
-  "include": ["src"],
-  "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "sourceMap": false,
-    "target": "esnext",
-    "strict": true,
-    "noErrorTruncation": true
-  },
-  "ts-node": {
-    "esm": true
-  }
+  "include": ["src"]
 }
