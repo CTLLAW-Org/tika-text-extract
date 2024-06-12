@@ -10,7 +10,7 @@ const debug = debugUtil('tika-text-extract');
  * @param options Customize text extraction
  * @return Resolves when server is started
  */
-export function startServer(artifactPath, options) {
+export default function startServer(artifactPath, options) {
   if (!artifactPath) {
     throw new Error('Please provide path to Tika Server Artifact');
   }

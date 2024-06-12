@@ -11,7 +11,7 @@ const URL = 'http://localhost:9998/tika';
  * @param input File to extract text from
  * @return Extracted text
  */
-export function extract(input = '') {
+export default function extract(input = '') {
   const fileStream = isStream(input) ? input : intoStream(input);
   const tikaStream = got.stream.put(URL, {
     headers: {Accept: 'text/plain'},
