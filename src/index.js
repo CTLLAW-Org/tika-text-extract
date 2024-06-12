@@ -1,5 +1,5 @@
-import { startServer } from './server';
-import { extract } from './text';
+import { startServer } from './server.js';
+import { extract } from './text.js';
 
 export default {
   startServer,
