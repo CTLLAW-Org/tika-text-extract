@@ -6,9 +6,9 @@
   "repository": "shelfio/tika-text-extract",
   "license": "MIT",
   "author": "Vlad Holubiev",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "files": [
-    "dist/"
+    "src/"
   ],
   "scripts": {
     "build": "rm -rf ./lib/ && babel --extensions .ts ./src -d ./lib --ignore ./src/*.types.ts",
