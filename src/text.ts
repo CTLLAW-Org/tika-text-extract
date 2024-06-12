@@ -1,4 +1,13 @@
-import got from 'got';
+// import got from 'got';
+
+const got = (...args) => import('got').then(({default: got}) => got(...args));
+
+/*let got;
+
+(async () => {
+    got = await import('got').then(got => got.default)
+})().catch(console.error);*/
+
 import intoStream from 'into-stream';
 import isStream from 'is-stream';
 import getStream from 'get-stream';
