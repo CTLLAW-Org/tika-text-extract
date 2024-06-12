@@ -1,6 +1,6 @@
 // import got from 'got';
 
-const got = (...args) => import('got').then(({default: got}) => got(...args));
+/*const got = (...args) => import('got').then(({default: got}) => got(...args));*/
 
 /*let got;
 
@@ -8,6 +8,7 @@ const got = (...args) => import('got').then(({default: got}) => got(...args));
     got = await import('got').then(got => got.default)
 })().catch(console.error);*/
 
+import axios from "axios";
 import intoStream from 'into-stream';
 import isStream from 'is-stream';
 import getStream from 'get-stream';
@@ -19,11 +20,18 @@ const URL = 'http://localhost:9998/tika';
  * @param input File to extract text from
  * @return Extracted text
  */
-export function extract(input: Buffer | string | Promise<string> = ''): Promise<string> {
+export async function extract(input: Buffer | string | Promise<string> = ''): Promise<string> {
   const fileStream = isStream(input) ? input : intoStream(input);
-  const tikaStream = got.stream.put(URL, {
+  /*const tikaStream = got.stream.put(URL, {
     headers: {Accept: 'text/plain'},
-  });
+  });*/
+
+    const response = await axios.put(URL, {
+        headers: {Accept: 'text/plain'},
+        responseType: 'stream'
+    });
+
+    const tikaStream = response.data;
 
   return getStream(fileStream.pipe(tikaStream));
 }

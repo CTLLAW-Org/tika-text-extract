@@ -19,6 +19,7 @@
   },
   "prettier": "@shelf/prettier-config",
   "dependencies": {
+    "axios": "^1.7.2",
     "debug": "^4.0.0",
     "get-stream": "^6.0.0",
     "got": "12.1.0",
